@@ -18,7 +18,7 @@ this will essentially:
 the running processes are managed with pm2.
 
 ### config
-
+```
 {
 	"apps": {
 		"path": "/path/to/your/apps", -> the apps and repositories will go there.. this should be a low-priviledged users home or so. apps will run under this user
@@ -38,7 +38,7 @@ the running processes are managed with pm2.
 		}
 	}
 }
-
+```
 
 ### usage
 
