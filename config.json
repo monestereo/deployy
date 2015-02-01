@@ -1,0 +1,19 @@
+{
+	"apps": {
+		"path": "/path/to/your/apps",
+		"ports": "80000"
+	},
+	"server": {
+		"domain": "example.com",
+		"availableDir": "/etc/nginx/sites-available",
+		"enabledDir": "/etc/nginx/sites-enabled",
+		"restartCmd": "/etc/init.d/nginx restart"
+	},
+	"builder": {
+		"node": {
+			"nodePath": "/usr/local/bin/node",
+			"npmPath": "/usr/local/bin/npm",
+			"pm2": {}
+		}
+	}
+}
