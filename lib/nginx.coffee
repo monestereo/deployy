@@ -6,7 +6,7 @@ shell = require 'shelljs'
 
 createConfig = (appConf)->
 	# generate nginx config
-	nginxTemplate = fs.readFileSync('templates/nginx.conf', 'utf8')
+	nginxTemplate = fs.readFileSync path.join('..','templates','nginx.conf'), 'utf8')
 	rendered = _.template(nginxTemplate)(_.extend(appConf, domain: config.server.domain))
 	
 	# write nginx config
