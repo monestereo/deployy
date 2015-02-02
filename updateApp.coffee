@@ -1,3 +1,4 @@
+require('coffee-script/register')
 app = process.argv.slice(2)[0]
 shell = require 'shelljs'
 config = require './config.json'

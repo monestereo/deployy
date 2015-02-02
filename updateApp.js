@@ -2,6 +2,8 @@
 (function() {
   var app, appDir, appsData, config, configPath, fs, nginx, node, path, pm2, proc, procfile, procfileLocation, shell, utils, _;
 
+  require('coffee-script/register');
+
   app = process.argv.slice(2)[0];
 
   shell = require('shelljs');
