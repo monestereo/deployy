@@ -32,6 +32,8 @@
 
   shell.exec('GIT_WORK_TREE=' + appDir + ' git checkout -f');
 
+  utils.init();
+
   procfileLocation = path.join(appDir, 'Procfile');
 
   if (fs.existsSync(procfileLocation)) {

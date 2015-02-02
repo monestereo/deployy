@@ -16,8 +16,11 @@ node = require './builders/node-builder' # TODO: wildcard require and extra node
 shell.echo "updating application"
 shell.exec 'GIT_WORK_TREE=' + appDir + ' git checkout -f'
 
+utils.init()
+
 procfileLocation = path.join(appDir, 'Procfile')
 if fs.existsSync(procfileLocation)
+
 	shell.echo "Procfile detected"
 	proc = procfile.parse(fs.readFileSync(procfileLocation, 'utf8'))
 	
