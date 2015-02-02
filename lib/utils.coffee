@@ -11,7 +11,7 @@ path = require 'path'
 data = null
 dataDbPath = path.join(__dirname, '..', 'data.db')
 
-do loadAppsData = ->	
+init = ->
 	if not fs.existsSync(dataDbPath)
 		console.log('create Data File')
 		data =
@@ -47,3 +47,4 @@ module.exports =
 	getAppsData: getAppsData
 	addApp: addApp
 	saveAppsData: saveAppsData
+	init: init

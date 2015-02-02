@@ -26,8 +26,6 @@ the running processes are managed with pm2.
 	},
 	"server": {
 		"domain": "example.com",
-		"availableDir": "/etc/nginx/sites-available",
-		"enabledDir": "/etc/nginx/sites-enabled",
 		"restartCmd": "/etc/init.d/nginx restart"
 	},
 	"builder": {
@@ -40,12 +38,18 @@ the running processes are managed with pm2.
 }
 ```
 
+### setup
+allow the user using deployy to restart nginx without password (TODO: is there a more secure way?):
+create the file /etc/sudoers.d/your_username with the content `your_user ALL=NOPASSWD:/etc/init.d/nginx`
+
+add the line `include /path/to/your/apps/sites-enabled/*.conf;` to /etc/nginx/nginx.conf right after the line `include /etc/nginx/sites-enabled/*;`
+
 ### usage
 
 `gulp create` on the server will create the repository
 
-the git repo will then lie in config.apps.path/repositories/app-name.git
+the git repo will then be in /path/to/your/apps/repositories/app-name.git
 
 on the client: 
-`git remote add deployy ssh://user@server:/config.apps.path/repositories/app-name.git`
+`git remote add deployy ssh://user@server:/path/to/your/apps/repositories/app-name.git`
 `git push deployy master`
