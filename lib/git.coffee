@@ -17,6 +17,7 @@ initRepo = ->
 
 	# create git Repo
 	repoPath = path.join(config.apps.path, 'repositories', uniqueName + '.git')
+	appconf.repo = repoPath
 	shell.exec 'git init --bare ' + repoPath, silent: yes
 	shell.exec 'git clone -q ' + repoPath + ' ' + appConf.path, silent: yes
 	
@@ -25,7 +26,8 @@ initRepo = ->
 	postRecieve = _.template(postRecieveTemplate)(
 		nodePath: config.builder.node.nodePath
 		scriptPath: path.join(__dirname, '../', 'updateApp.js')
-		app: uniqueName
+		app: uniqueName,
+		work_dir: path.join __dirname, '..'
 	)
 
 	hookPath = path.join(repoPath, 'hooks', 'post-receive')
