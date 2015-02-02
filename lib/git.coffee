@@ -17,7 +17,7 @@ initRepo = ->
 
 	# create git Repo
 	repoPath = path.join(config.apps.path, 'repositories', uniqueName + '.git')
-	appconf.repo = repoPath
+	appConf.repo = repoPath
 	shell.exec 'git init --bare ' + repoPath, silent: yes
 	shell.exec 'git clone -q ' + repoPath + ' ' + appConf.path, silent: yes
 	
