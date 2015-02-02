@@ -6,7 +6,7 @@ fs = require 'fs'
 _ = require 'lodash'
 
 initRepo = ->
-	utils.loadAppsConfig()
+	utils.init()
 	uniqueName = utils.uniqueServerName()
 
 	# create Config
