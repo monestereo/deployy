@@ -36,8 +36,8 @@ initRepo = ->
 
 	utils.addApp(appConf)
 
-	console.log "successfully created: #{uniqueName}"
-	return
+	console.log "successfully created: #{uniqueName} at #{appConf.repo}"
+	return appConf
 
 module.exports = {
 	initRepo: initRepo
