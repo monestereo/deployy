@@ -27,7 +27,7 @@ createConfig = (appConf)->
 	return configPath: configPath
 
 restart = ()->
-	shell.exec('sudo ' + config.server.restartCmd)
+	shell.exec('sudo /etc/init.d/nginx restart')
 
 module.exports = 
 	createConfig: createConfig,
